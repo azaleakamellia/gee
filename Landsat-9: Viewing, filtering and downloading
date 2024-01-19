@@ -1,0 +1,50 @@
+/* ========== NOTE ===============
+
+Area of interest is Yogyakarta, Indonesia. You can download standard country boundaries from GADM website as follows
+https://gadm.org/
+=================================
+*/
+
+Map.setCenter(110.48080554353407, -7.89186356463968, 10);
+
+//0. Conversion of shp table into feature collection
+var yogyakarta = ee.FeatureCollection(table).geometry();
+Map.addLayer(yogyakarta);
+
+// 1. Load Landsat-9
+var l9_col = ee.ImageCollection('LANDSAT/LC09/C02/T1_L2')
+  .filterDate('2023-01-01', '2023-10-20')
+  .filterBounds(yogyakarta)
+  .filterMetadata('CLOUD_COVER', 'less_than', 15)
+  .sort('CLOUD_COVER', false)
+
+print(l9_col)
+
+// 2. Set visualization parameter
+var visParamsTrue = {
+  bands: ['SR_B4', 'SR_B3', 'SR_B2'], //You can change the bands to visualize here
+  min:5000, 
+  max:18000, 
+  gamma:0.9
+};
+
+//3. Mosaic to combine the different contiguous image
+var mosaik = l9_col.mosaic().clip(yogyakarta);
+
+print(mosaik);
+
+// Map.addLayer(l9_col, visParamsTrue, 'Landsat 9 Collection') ;
+Map.addLayer(mosaik, visParamsTrue, 'Mosaic');
+
+/* DELETE THIS LINE TO EXPORT DATA
+
+// 3. Exporting Landsat 9 clipped image (this includes all the bands) 
+  Export.image.toDrive({
+  image: mosaik.int16(),
+  description: 'Landsat9_2023_Yogyakarta',
+  scale: 30,
+  region: yogyakarta,
+  maxPixels: 1e13
+});
+
+DELETE THIS LINE TO EXPORT DATA*/
