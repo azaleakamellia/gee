@@ -1,9 +1,8 @@
-/*
+/* ========================= NOTE ==================================
 This code considers that you have understood the basics of uploading your vector/shapefile into your 'Asset' folder 
 in your Google Earth Engine account. Example as shown below. The example uses a shapefile by the name 'daro'
 
-Import
-var daro: Table users/azaleakamellia/Daro
+===================================================================
 */
 
 // This code is to pan the map to go to your area of interest
