@@ -1,4 +1,4 @@
-# 🎮 Google Earth Engine 101
+# Google Earth Engine 101
 The compilation of Google Earth Engine (GEE) JavaScript (.js) codes to be used to extract, analyze or download the image satellite data provided by the platform.
 
 ###### tags: `how-to` `gee` `remote sensing` `anecdata`
@@ -19,7 +19,7 @@ The code here are tried and tested to serve the purposes of getting what you nee
 
 </br>
 
-## 💻 Table of Content
+## 🎮  Table of Content
 
 Please find the demo links to my GEE app below for your testing. Do ensure that you have already signed up or registered to use GEE:
 
