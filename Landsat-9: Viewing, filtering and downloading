@@ -1,51 +1,46 @@
-/* ========== NOTE ===============
+// 0. Import the LSIB International Boundaries as feature collection (geometry)
+var dataset = ee.FeatureCollection('USDOS/LSIB_SIMPLE/2017');
 
-Area of interest is Yogyakarta, Indonesia. You can download standard country boundaries from GADM website as follows
-https://gadm.org/
+// Filter through the 'dataset' geometry to extract the country of your choice
+var japan = dataset.filter(ee.Filter.eq('country_na', 'Japan'));
 
-=================================
-*/
+// Add the 'japan' geometry onto the map
+// Map.addLayer(japan);
 
-Map.setCenter(110.48080554353407, -7.89186356463968, 10);
+// Pan to the object layer 
+Map.centerObject(japan, 5);
 
-//0. Conversion of shp table into feature collection
-var yogyakarta = ee.FeatureCollection(table).geometry();
-Map.addLayer(yogyakarta);
+// 1. Import Landsat 9 image collection and filter through the data; date, boundary and cloud cover
+var L9_col = ee.ImageCollection('LANDSAT/LC09/C02/T1_L2')
+  .filterDate('2023-01-01', '2023-12-31')
+  .filterBounds(japan)
+  .filterMetadata('CLOUD_COVER', 'less_than', 20)
+  .sort('CLOUD_COVER', false);
 
-// 1. Load Landsat-9
-var l9_col = ee.ImageCollection('LANDSAT/LC09/C02/T1_L2')
-  .filterDate('2023-01-01', '2023-10-20')
-  .filterBounds(yogyakarta)
-  .filterMetadata('CLOUD_COVER', 'less_than', 15)
-  .sort('CLOUD_COVER', false)
+print(L9_col);
 
-print(l9_col)
-
-// 2. Set visualization parameter
+// 2. Set the visualization parameters to show True Colors composite
 var visParamsTrue = {
-  bands: ['SR_B4', 'SR_B3', 'SR_B2'], //You can change the bands to visualize here
-  min:5000, 
-  max:18000, 
+  bands:['SR_B4', 'SR_B3', 'SR_B2'],
+  min:5000,
+  max:18000,
   gamma:0.9
 };
 
-//3. Mosaic to combine the different contiguous image
-var mosaik = l9_col.mosaic().clip(yogyakarta);
+// 3. Create a mosaic of the image collection within geometry of interest 
+var mosaic2023 = L9_col.mosaic().clip(japan);
 
-print(mosaik);
+// Visualize the created mosaic using the visualization parameters
+Map.addLayer(mosaic2023, visParamsTrue, 'Landsat-9 of Japan, 2023');
 
-// Map.addLayer(l9_col, visParamsTrue, 'Landsat 9 Collection') ;
-Map.addLayer(mosaik, visParamsTrue, 'Mosaic');
-
-/* DELETE THIS LINE TO EXPORT DATA
-
-// 3. Exporting Landsat 9 clipped image (this includes all the bands) 
-  Export.image.toDrive({
-  image: mosaik.int16(),
-  description: 'Landsat9_2023_Yogyakarta',
-  scale: 30,
-  region: yogyakarta,
-  maxPixels: 1e13
+/*/=====================DELETE THIS LINE IF YOU WANT TO EXPORT THE DATA=================//
+// 4. Export the mosaic into your Google Drive 
+Export.image.toDrive({
+  image:mosaic2023.int16(),
+  description: 'Landsat9_Japan_2023',
+  scale:30,
+  region:japan,
+  maxPixels:1e13
 });
 
-DELETE THIS LINE TO EXPORT DATA*/
+//=====================DELETE THIS LINE IF YOU WANT TO EXPORT THE DATA=================/*/
