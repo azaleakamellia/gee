@@ -8,10 +8,10 @@ This repository compiles the straight-to-work code for your practical uses acade
 </br>
 
 ## 🌱 If you're new to GEE here are a few notes for you
-- [ ] The platform, **Google Earth Engine** is a fully *ONLINE* platform. It is not a software and its interface is via a website.
-- [ ] It requires you to have a Google account and to utilize this platform you have to sign-up and register. Please do so at this website 👉🏻 [https://signup.earthengine.google.com/](https://signup.earthengine.google.com/') before you proceed any further.
-- [ ] **GEE** is not a fully-functioned solution to the auxilliary needs of a geographical information system (GIS). Thus, it is a tool to view, extract, process and analyze publicly available satellite data. 
-- [ ] You do not need to aspire to be fluent in JavaScript to be able to use this platform. You can use it so long as you know what you want to achieve at the platform i.e. visualize data, extract the data, classify the data etc. 
+- The platform, **Google Earth Engine** is a fully *ONLINE* platform. It is not a software and its interface is via a website.
+- It requires you to have a Google account and to utilize this platform you have to sign-up and register. Please do so at this website 👉🏻 [https://signup.earthengine.google.com/](https://signup.earthengine.google.com/') before you proceed any further.
+- **GEE** is not a fully-functioned solution to the auxilliary needs of a geographical information system (GIS). Thus, it is a tool to view, extract, process and analyze publicly available satellite data. 
+- You do not need to aspire to be fluent in JavaScript to be able to use this platform. You can use it so long as you know what you want to achieve at the platform i.e. visualize data, extract the data, classify the data etc. 
 
 </br>
 
@@ -23,5 +23,5 @@ The code here are tried and tested to serve the purposes of getting what you nee
 
 Please find the demo links to my GEE app below for your testing. Do ensure that you have already signed up or registered to use GEE:
 
-1. [Landsat-9 SR Image: Viewing, filtering and downloading](https://code.earthengine.google.com/9161bce7eb7cda63af9d58dfdea7d201?hideCode=true).
+1. [Landsat-9 SR Image: Viewing, filtering and downloading]([https://code.earthengine.google.com/9161bce7eb7cda63af9d58dfdea7d201?hideCode=true](https://code.earthengine.google.com/a10f976a52f26d36bc7441be28a71ad1?hideCode=true))
 2. [Sentinel-2 SR Image: Viewing, filtering and downloading](https://code.earthengine.google.com/8fc617a0f0e66344562eea93c7985e23?hideCode=true)
