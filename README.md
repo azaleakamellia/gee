@@ -16,13 +16,3 @@ This repository compiles the straight-to-work code for your practical uses acade
 </br>
 
 The code here are tried and tested to serve the purposes of getting what you need from Google Earth Engine without too much hassle, so there won't be any complicated code shared here without a full explanation or an YouTube demo video. 
-
-</br>
-
-## 🎮  Table of Content
-
-Please find the demo links to my GEE app below for your testing. Do ensure that you have already signed up or registered to use GEE:
-
-1. [⌨️ Landsat-9 SR Image: Viewing, filtering and downloading](https://code.earthengine.google.com/a10f976a52f26d36bc7441be28a71ad1?hideCode=true)
-   [📺 YouTube](https://youtu.be/aKtToPXtYHI?si=YBvCipU1QrqsK2rE)
-3. [⌨️ Sentinel-2 SR Image: Viewing, filtering and downloading](https://code.earthengine.google.com/8fc617a0f0e66344562eea93c7985e23?hideCode=true)
