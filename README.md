@@ -15,4 +15,9 @@ This repository compiles the straight-to-work code for your practical uses acade
 
 </br>
 
-The code here are tried and tested to serve the purposes of getting what you need from Google Earth Engine without too much hassle at the time of development/study. Feel free to inform me should there be any outdated ones.
+## 📑 Sources
+The code here are tried and tested to serve the purposes of getting what you need from Google Earth Engine without too much hassle at the time of development/study. It's a culmination of revisions and scratch notes here and there to flag any kickbacks from the program that you may not have expected to help decrease you doom-searching time at Google or ChatGPT or Gemini. 
+
+</br>
+
+Feel free to inform me should there be any outdated ones.
