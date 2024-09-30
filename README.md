@@ -1,9 +1,9 @@
-# Google Earth Engine 101
+# Google Earth Engine (GEE) Tank
 The compilation of Google Earth Engine (GEE) JavaScript (.js) codes to be used to extract, analyze or download the image satellite data provided by the platform.
 
 ###### tags: `how-to` `gee` `remote sensing` `anecdata`
 
-This repository compiles the straight-to-work code for your practical uses academically or for work. The codes are strictly in JavaScript and is to be implemented 'organically' at the [Google Earth Engine Code Editor]('https://code.earthengine.google.com/') platform. 
+This repository compiles the straight-to-work code for your practical uses academically or for work. The codes are strictly in JavaScript and is to be implemented 'organically' in its original environment at the [Google Earth Engine Code Editor]('https://code.earthengine.google.com/') platform. 
 
 </br>
 
@@ -15,4 +15,4 @@ This repository compiles the straight-to-work code for your practical uses acade
 
 </br>
 
-The code here are tried and tested to serve the purposes of getting what you need from Google Earth Engine without too much hassle, so there won't be any complicated code shared here without a full explanation or an YouTube demo video. 
+The code here are tried and tested to serve the purposes of getting what you need from Google Earth Engine without too much hassle at the time of development/study. Feel free to inform me should there be any outdated ones.
